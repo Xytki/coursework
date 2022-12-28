@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4aa3bb8a-96ed-4a7a-96fb-508db2451fb7" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/action.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/action.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/action.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -80,11 +80,19 @@
       <option name="project" value="LOCAL" />
       <updated>1672261083796</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="login_and_push">
+      <created>1672263411704</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1672263411704</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="login and push" />
-    <option name="LAST_COMMIT_MESSAGE" value="login and push" />
+    <MESSAGE value="login_and_push" />
+    <option name="LAST_COMMIT_MESSAGE" value="login_and_push" />
   </component>
 </project>
