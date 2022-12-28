@@ -1,0 +1,10 @@
+name: Build and deploy
+on: [push]
+jobs:
+  build_and_push:
+    runs-on: ubuntu-latest
+    steps:
+      - name: clone code
+        uses: actions/checkout@v2
+      - name: docker duild
+        run: docker build -t xytki/sky_pro:$GITHUB_REF_NAME-$GITHUB_RUN_ID .
