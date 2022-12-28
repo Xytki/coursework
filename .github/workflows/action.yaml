@@ -14,4 +14,4 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_TOKEN }}
       - name: docker push
-        run: docker push -t xytki/sky_pro:$GITHUB_REF_NAME-$GITHUB_RUN_ID
+        run: docker push xytki/sky_pro:$GITHUB_REF_NAME-$GITHUB_RUN_ID
