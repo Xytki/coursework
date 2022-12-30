@@ -32,7 +32,7 @@ class Skill(ABC):
     def skill_effect(self) -> str:
         pass
 
-    def _is_stamina_enough(self):
+    def _is_stamina_enough(self) -> bool:
         return self.user.stamina > self.stamina
 
     def use(self, user: BaseUnit, target: BaseUnit) -> str:
@@ -47,22 +47,22 @@ class Skill(ABC):
 
 
 class FuryPunch(Skill):
-    name = "Свирепый пинок"
-    stamina = 8
-    damage = 12
+    name: str = "Свирепый пинок"
+    stamina: int = 6
+    damage: int = 12
 
-    def skill_effect(self):
+    def skill_effect(self) -> str:
         self.user.stamina -= self.stamina
         self.target.get_damage(self.damage)
         return f"{self.user.name} использует {self.name} и наносит {self.damage} урона сопернику"
 
 
 class HardShot(Skill):
-    name = "Мощный укол"
-    stamina = 5
-    damage = 15
+    name: str = "Мощный укол"
+    stamina: int = 5
+    damage: int = 15
 
-    def skill_effect(self):
+    def skill_effect(self) -> str:
         self.user.stamina -= self.stamina
         self.target.get_damage(self.damage)
         return f"{self.user.name} использует {self.name} и наносит {self.damage} урона сопернику"

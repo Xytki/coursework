@@ -11,7 +11,7 @@ class BaseUnit(ABC):
     base unit class
     """
 
-    def __init__(self, name: str, unit_class: UnitClass):
+    def __init__(self, name: str, unit_class: UnitClass) -> None:
 
         self.name = name
         self.unit_class = unit_class
@@ -22,18 +22,18 @@ class BaseUnit(ABC):
         self._is_skill_used = False
 
     @property
-    def health_points(self):
+    def health_points(self) -> float:
         return round(self.hp, 1)
 
     @property
-    def stamina_points(self):
+    def stamina_points(self) -> float:
         return round(self.stamina, 1)
 
-    def equip_weapon(self, weapon: Weapon):
+    def equip_weapon(self, weapon: Weapon) -> str:
         self.weapon = weapon
         return f"{self.name} экипирован оружием {self.weapon.name}"
 
-    def equip_armor(self, armor: Armor):
+    def equip_armor(self, armor: Armor) -> str:
         self.armor = armor
         return f"{self.name} экипирован броней {self.weapon.name}"
 
@@ -45,7 +45,7 @@ class BaseUnit(ABC):
             damage = damage - target.armor.defence * target.unit_class.armor
         else:
             pass
-        damage = target.get_damage(damage)
+        damage: float = target.get_damage(damage)
         return damage
 
     def get_damage(self, damage: int) -> Optional[int]:
@@ -73,7 +73,7 @@ class PlayerUnit(BaseUnit):
 
     def hit(self, target: BaseUnit) -> str:
         if self.stamina >= self.weapon.stamina_per_hit * self.unit_class.stamina:
-            damage = self._count_damage(target)
+            damage: int = self._count_damage(target)
             if damage:
                 return f"{self.name} используя {self.weapon.name} пробивает {target.armor.name} " \
                        f"соперника и наносит {damage} урона."
